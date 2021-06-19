@@ -1,0 +1,7 @@
+<app-toolbar [selectBasket]="selectBasket$ | async" (resetBasket)="onResetBasket()"></app-toolbar>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <router-outlet></router-outlet>
+  </div>
+</div>

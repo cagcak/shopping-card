@@ -1,0 +1,55 @@
+<mat-card *ngIf="product" class="mat-elevation-z4">
+  <mat-card-header>
+    <div mat-card-avatar [ngStyle]="productIconStyle"></div>
+    <mat-card-title>{{ product.title }}</mat-card-title>
+    <mat-card-subtitle>{{ product.distributor }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [attr.src]="product.productImage" [attr.alt]="product.title" />
+  <mat-card-content>
+    <div fxLayout="row wrap" fxFlexAlign="primary" fxLayoutAlign="space-between center" fxFlexFill>
+      <p>{{ product.description }}</p>
+      <mat-icon [matBadge]="product.quantity">shopping_basket</mat-icon>
+    </div>
+    <p>Price: {{ product.price | currency }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div fxLayout="row wrap" fxFlexAlign="center" fxLayoutAlign="center" fxFlexFill>
+      <button
+        *ngIf="product.quantity === 0"
+        mat-mini-fab
+        [matTooltip]="MARKET_ACTIONS.add.title"
+        [attr.aria-label]="MARKET_ACTIONS.add.title"
+        (click)="addItemToBasket()"
+      >
+        <mat-icon>{{ MARKET_ACTIONS.add.icon }}</mat-icon>
+      </button>
+      <button
+        *ngIf="product.quantity === 1"
+        mat-mini-fab
+        [matTooltip]="MARKET_ACTIONS.remove.title"
+        [attr.aria-label]="MARKET_ACTIONS.remove.title"
+        (click)="removeItemFromBasket()"
+      >
+        <mat-icon>{{ MARKET_ACTIONS.remove.icon }}</mat-icon>
+      </button>
+      <button
+        *ngIf="product.quantity > 1"
+        mat-mini-fab
+        [matTooltip]="MARKET_ACTIONS.decrease.title"
+        [attr.aria-label]="MARKET_ACTIONS.decrease.title"
+        (click)="decreaseItemAtBasket()"
+      >
+        <mat-icon>{{ MARKET_ACTIONS.decrease.icon }}</mat-icon>
+      </button>
+      <button
+        *ngIf="product.quantity > 0"
+        mat-mini-fab
+        [matTooltip]="MARKET_ACTIONS.increase.title"
+        [attr.aria-label]="MARKET_ACTIONS.increase.title"
+        (click)="increaseItemAtBasket()"
+      >
+        <mat-icon>{{ MARKET_ACTIONS.increase.icon }}</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,7 @@
+{
+  "spec_dir": "shopping-card/dist/tests",
+  "spec_files": ["**/*[sS]pec.ts"],
+  "random": false,
+  "seed": null,
+  "stopSpecOnExpectationFailure": false
+}

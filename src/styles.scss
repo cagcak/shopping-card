@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/theming";
+@include mat-core();
+
+$inside-primary: mat-palette($mat-purple);
+$inside-accent: mat-palette($mat-deep-purple);
+$inside-warn: mat-palette($mat-yellow);
+
+$inside-theme-dark: mat-dark-theme($inside-primary, $inside-accent, $inside-warn);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include angular-material-theme($inside-theme-dark);
+
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #d0d0d0;
+  background-color: #2d2d2d;
+}
+
+.mat-menu-panel {
+  min-width: calc(56px * 4) !important;
+  max-width: calc(56px * 5) !important;
+}

@@ -1,0 +1,8 @@
+<ng-container *ngIf="product">
+  <img class="item-image" [attr.src]="product.productImage" mat-card-avatar />
+  <span class="item-name">{{ product.title }}</span>
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
+    <span class="item-price">{{ product.totalPrice | currency }}</span>
+    <span class="item-quantity">Quantity: {{ product.quantity }}</span>
+  </div>
+</ng-container>

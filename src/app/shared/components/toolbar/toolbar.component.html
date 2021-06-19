@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Market</span>
+    <span style="flex: 1 1 auto"></span>
+
+    <div *ngIf="selectBasket" class="mat-menu">
+      <button
+        mat-button
+        matTooltip="Reset basket"
+        [disabled]="!selectBasket.products.length"
+        (click)="resetBasket.emit($event)"
+      >
+        <mat-icon>restart_alt</mat-icon>
+      </button>
+      <button mat-button [matMenuTriggerFor]="menu" matTooltip="Basket">
+        <mat-icon [matBadge]="selectBasket.products.length">shopping_basket</mat-icon>
+      </button>
+      <mat-menu #menu xPosition="before">
+        <ng-container *ngIf="selectBasket.products.length; else noProductAtBasket">
+          <mat-nav-list>
+            <div
+              *ngFor="let basketProduct of selectBasket.products; let last = last"
+              class="basket-item"
+              mat-menu-item
+              [disabled]="true"
+            >
+              <ng-container mat-list-item>
+                <app-basket-item [product]="basketProduct"></app-basket-item>
+                <mat-divider *ngIf="!last"></mat-divider>
+              </ng-container>
+            </div>
+          </mat-nav-list>
+          <div [ngStyle]="{ textAlign: 'center' }">
+            <small>Total price: {{ selectBasket.totalPrice | currency }}</small>
+          </div>
+        </ng-container>
+        <ng-template #noProductAtBasket><p>No product found</p></ng-template>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
