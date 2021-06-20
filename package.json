@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:dev": "ng build",
-    "build:staging": "ng build --prod",
+    "build:node": "ng build",
+    "build:dev": "yarn build:node",
+    "build:staging": "yarn build:node --c=staging",
+    "build:production": "yarn build:node --c=production",
     "test:dev": "ng test --watch --progress",
     "test:staging": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
+    "test:production": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  environment: 'dev',
   production: false,
-  host: 'http://localhost:4200',
-  imagePath: 'http://localhost:4200/assets/images/',
+  imagePath: 'assets/images/',
 };
 
 /*

@@ -1,5 +1,5 @@
 export const environment = {
+  environment: 'production',
   production: true,
-  host: 'http://github.com/cagcak',
-  imagePath: 'http://localhost:4200/images/',
+  imagePath: 'assets/images/',
 };

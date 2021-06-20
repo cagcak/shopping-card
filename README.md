@@ -2,17 +2,66 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
-## Development server
+## Development server (localhost)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```shell
+npm run start
+```
 
-## Code scaffolding
+```shell
+yarn start
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> URL: <http://localhost:4200>
 
-## Build
+## Development server (container)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```shell
+docker build --build-arg configuration="" -t frontend/shopping-card-app-image:latest .
+docker run -d --name shopping_card -p 8080:80 frontend/shopping-card-app-image:latest
+```
+
+> URL: <http://localhost:8080>
+
+## Build (localhost)
+
+### production
+
+```shell
+npm run build:prod
+```
+
+```shell
+yarn build:prod
+```
+
+### staging
+
+```shell
+npm run build:staging
+```
+
+```shell
+yarn build:staging
+```
+
+## Build (container)
+
+### production
+
+```shell
+docker build --build-arg configuration=production -t frontend/shopping-card-app-image:latest .
+docker run -d --name shopping_card -p 8080:80 frontend/shopping-card-app-image:latest
+```
+
+### staging
+
+```shell
+docker build --build-arg configuration=staging -t frontend/shopping-card-app-image:latest .
+docker run -d --name shopping_card -p 8080:80 frontend/shopping-card-app-image:latest
+```
+
+> Possible docker container image size: ~140MB
 
 ## Running unit tests
 
