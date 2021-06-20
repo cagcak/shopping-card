@@ -1,38 +1,38 @@
 import { environment } from '@app/environments';
 import { MarketState } from '@app/store';
 
-export const MARKET: MarketState = {
+export const MOCK_MARKET: MarketState = {
   shop: {
     products: [
       {
         id: '435436673423',
-        title: 'teeth whitening kit',
-        description: 'colgate optic white teeth whitening kit',
+        title: 'luxury bag',
+        description: 'product advertising banner luxury bag',
         quantity: 0,
-        price: 217.5,
+        price: 17.5,
         totalPrice: 0,
-        productImage: `${environment.imagePath}colgate.jpg`,
-        distributor: 'COLGATE',
+        productImage: `${environment.imagePath}bag.jpg`,
+        distributor: 'Some company Co',
       },
       {
         id: '23123435',
-        title: 'chocolate biscuit',
-        description: 'eti chocolate biscuit',
+        title: 'sport shoes',
+        description: 'modern black friday sale',
         quantity: 0,
         price: 100,
         totalPrice: 0,
-        productImage: `${environment.imagePath}eti.jpg`,
-        distributor: 'ETI',
+        productImage: `${environment.imagePath}shoes.jpg`,
+        distributor: 'Company Co',
       },
       {
         id: -3454,
-        title: 'chocolate cake',
-        description: 'kinder chocolate cake',
+        title: 'ketchup',
+        description: 'tomato ketchup',
         quantity: 0,
         price: 7,
         totalPrice: 0,
-        productImage: `${environment.imagePath}kinder.jpg`,
-        distributor: 'KINDER',
+        productImage: `${environment.imagePath}ketchup.png`,
+        distributor: 'Distrubutor',
       },
     ],
   },

@@ -12,7 +12,7 @@ export const initialState: MarketState = {
   },
 };
 
-export const shoppingShopReducer = createReducer(
+export const shoppingCardReducer = createReducer(
   initialState,
   on(actions.productsLoaded, (state, { products }): MarketState => {
     const { shop } = state;
