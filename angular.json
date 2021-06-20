@@ -59,6 +59,34 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           }
         },
@@ -70,6 +98,9 @@
           "configurations": {
             "production": {
               "browserTarget": "shopping-card:build:production"
+            },
+            "staging": {
+              "browserTarget": "shopping-card:build:staging"
             }
           }
         },
@@ -107,6 +138,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "shopping-card:serve:production"
+            },
+            "staging": {
+              "devServerTarget": "shopping-card:serve:staging"
             }
           }
         }
