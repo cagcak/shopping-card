@@ -13,11 +13,7 @@ export class MarketEffects {
       ofType(MarketActionTypes.LOAD_PRODUCTS),
       mergeMap(() =>
         this.productService.loadProducts().pipe(
-          map((products) => {
-            console.log(products);
-
-            return { type: MarketActionTypes.PRODUCTS_LOADED, products };
-          }),
+          map((products) => ({ type: MarketActionTypes.PRODUCTS_LOADED, products })),
           catchError(() => EMPTY)
         )
       )

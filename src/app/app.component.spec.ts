@@ -3,7 +3,6 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatSnackBarHarness } from '@angular/material/snack-bar/testing';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -47,11 +46,5 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should be able to get action description of simple snack-bar', async () => {
-    fixture.componentInstance.onResetBasket();
-
-    const snackBar = await loader.getHarness(MatSnackBarHarness);
-
-    expect(await snackBar.getActionDescription()).toBe('Unsubscribe');
-  });
+  // TODO: harnerss tests
 });

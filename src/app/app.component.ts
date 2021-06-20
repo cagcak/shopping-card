@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { select, Store } from '@ngrx/store';
 import { map, take, tap } from 'rxjs/operators';
-import { MarketState, reset, selectBasket, selectMarketFeature, selectShop } from './store';
+import { MarketState, reset, selectBasket, selectMarketFeature } from './store';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,6 @@ import { MarketState, reset, selectBasket, selectMarketFeature, selectShop } fro
 export class AppComponent {
   title = 'shopping-card';
   selectBasket$ = this.store.pipe(select(selectBasket));
-  selectShop$ = this.store.pipe(select(selectShop));
 
   constructor(private store: Store<{ market: MarketState }>, private snackBar: MatSnackBar) {}
 
